@@ -1,0 +1,35 @@
+:root {
+  --main-bg-color: #3b4252;
+  --font-color: #e5e9f0;
+  --text-hover: #d8dee9;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: var(--main-bg-color);
+  border-radius: 1rem;
+  padding: 0.3rem;
+}
+
+.logo {
+  width: 10rem;
+  height: auto;
+}
+
+.box {
+  color: var(--font-color);
+}
+
+.social-media {
+}
+
+.social-media-links {
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.social-media-links:hover {
+  text-decoration: wavy;
+  color: var(--text-hover);
+}
