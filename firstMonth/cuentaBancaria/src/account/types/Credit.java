@@ -1,9 +1,18 @@
 package account.types;
 
-public class Credit {
-    Double credit;
+import account.types.interfaces.IValue;
 
-    public Credit(Double credit) {
+public class Credit implements IValue<Currency> {
+    private final Currency credit;
+
+    public Credit(Currency credit) {
+//        TODO(validate credit value)
         this.credit = credit;
+
+    }
+
+    @Override
+    public Currency value() {
+        return this.credit;
     }
 }

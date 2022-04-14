@@ -8,7 +8,7 @@ public class Id {
     }
     private String generateRandomNumber() {
         int random = (int) (Math.random() * 1000000000);
-        return random + "";
+        return String.valueOf(random);
     }
 
     private String generateRandomCharacters() {

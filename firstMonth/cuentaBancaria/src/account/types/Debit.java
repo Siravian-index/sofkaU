@@ -1,9 +1,16 @@
 package account.types;
 
-public class Debit {
-    Double debit;
+import account.types.interfaces.IValue;
 
-    public Debit(Double debit) {
+public class Debit implements IValue<Currency> {
+    private final Currency debit;
+
+    public Debit(Currency debit) {
         this.debit = debit;
+    }
+
+    @Override
+    public Currency value() {
+        return this.debit;
     }
 }
