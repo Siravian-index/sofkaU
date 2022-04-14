@@ -5,9 +5,8 @@ import java.util.Date;
 
 public class FormattedDate {
     String date;
-
-    public FormattedDate(Date date) {
+    public FormattedDate() {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        this.date = simpleDateFormat.format(date);
+        this.date = simpleDateFormat.format(new Date());
     }
 }
