@@ -15,4 +15,11 @@ public class Credit implements IValue<Currency> {
     public Currency value() {
         return this.credit;
     }
+
+    @Override
+    public String toString() {
+        return "Credit{" +
+                "credit=" + credit +
+                '}';
+    }
 }

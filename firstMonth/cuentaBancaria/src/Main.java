@@ -1,10 +1,12 @@
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import account.types.Currency;
+import account.types.Debit;
 
 public class Main {
     public static void main(String[] args) {
-        Date d = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        System.out.println(simpleDateFormat.format(d));
+        var debit = new Debit(new Currency(300.00));
+        System.out.println(debit.value());
+        debit.addCurrency(new Currency(100.00));
+        System.out.println(debit.value());
+
     }
 }

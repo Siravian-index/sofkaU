@@ -4,7 +4,7 @@ import account.types.interfaces.IValue;
 import account.validator.AccountValidator;
 
 public class Balance implements IValue<Currency> {
-    private final Currency balance;
+    private Currency balance;
     public Balance(Currency balance) {
 //        throws if balance is <= 0
         AccountValidator validator = new AccountValidator();
@@ -15,5 +15,12 @@ public class Balance implements IValue<Currency> {
     @Override
     public Currency value() {
         return this.balance;
+    }
+
+    @Override
+    public String toString() {
+        return "Balance{" +
+                "balance=" + balance +
+                '}';
     }
 }
