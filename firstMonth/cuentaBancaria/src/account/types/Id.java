@@ -3,7 +3,6 @@ package account.types;
 public class Id {
     String id;
 
-
     public Id() {
         this.id = generateRandomCharacters() + generateRandomNumber();
     }
