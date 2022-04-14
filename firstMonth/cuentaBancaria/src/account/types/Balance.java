@@ -1,15 +1,18 @@
 package account.types;
 
-import account.types.interfaces.IValue;
+import account.types.interfaces.IBalance;
 import account.validator.AccountValidator;
 
-public class Balance implements IValue<Currency> {
-    private Currency balance;
-    public Balance(Currency balance) {
-//        throws if balance is <= 0
-        AccountValidator validator = new AccountValidator();
-        validator.validateValue(balance);
-        this.balance = balance;
+public class Balance implements IBalance {
+    private final Currency balance;
+
+    public Balance(Currency currency) {
+        new AccountValidator().validateDeposit(currency);
+        this.balance = currency;
+    }
+
+    public Balance() {
+        this.balance = new Currency(0.0);
     }
 
     @Override
@@ -17,10 +20,34 @@ public class Balance implements IValue<Currency> {
         return this.balance;
     }
 
+
+    @Override
+    public void withDraw(Currency amount) {
+
+    }
+
+    @Override
+    public void deposit(Currency amount) {
+
+    }
+
+    @Override
+    public void saveTransaction() {
+
+    }
+
+    @Override
+    public void transfer(Currency amount) {
+
+    }
+
+    @Override
+    public Currency seeBalance() {
+        return this.balance;
+    }
+
     @Override
     public String toString() {
-        return "Balance{" +
-                "balance=" + balance +
-                '}';
+        return "Balance{" + "balance=" + balance + '}';
     }
 }

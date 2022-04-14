@@ -7,7 +7,9 @@ public interface IBalance {
 
     void deposit(Currency amount);
 
-    void saveTransactionvoid();
+    void saveTransaction();
+
+    Currency seeBalance();
 
     void transfer(Currency amount);
 }
