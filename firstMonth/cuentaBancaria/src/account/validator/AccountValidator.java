@@ -10,4 +10,9 @@ public class AccountValidator implements IAccountValidator {
             throw new IllegalStateException("The value must be greater than 0");
         }
     }
+
+    @Override
+    public void validateWithdraw(Currency currency) throws IllegalStateException {
+
+    }
 }
