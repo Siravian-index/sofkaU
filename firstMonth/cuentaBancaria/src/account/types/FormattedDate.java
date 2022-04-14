@@ -1,23 +1,36 @@
 package account.types;
 
 import account.types.interfaces.IDate;
-import account.types.interfaces.IValue;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class FormattedDate implements IDate {
-    String date;
-    public FormattedDate() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        this.date = simpleDateFormat.format(new Date());
-    }
+    final LocalDateTime date;
 
+    public FormattedDate() {
+        this.date = LocalDateTime.now();
+    }
 
     @Override
-    public String value() {
-        return this.date;
+    public String showFullDate() {
+        return formatDate(this.date, "dd/MM/yyyy-HH:mm:ss");
     }
+
+    @Override
+    public String showDate() {
+        return formatDate(this.date, "dd/MM/yyyy");
+    }
+
+    @Override
+    public String showHour() {
+        return formatDate(this.date, "HH:mm:ss");
+    }
+
+    private String formatDate(LocalDateTime date, String pattern) {
+        return date.format(DateTimeFormatter.ofPattern(pattern));
+    }
+
 
     @Override
     public String toString() {
