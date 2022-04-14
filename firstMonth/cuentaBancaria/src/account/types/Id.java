@@ -6,6 +6,7 @@ public class Id {
     public Id() {
         this.id = generateRandomCharacters() + generateRandomNumber();
     }
+
     private String generateRandomNumber() {
         int random = (int) (Math.random() * 1000000000);
         return String.valueOf(random);

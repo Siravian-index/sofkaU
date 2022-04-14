@@ -6,9 +6,7 @@ public class Credit implements IValue<Currency> {
     private final Currency credit;
 
     public Credit(Currency credit) {
-//        TODO(validate credit value)
         this.credit = credit;
-
     }
 
     @Override
@@ -18,8 +16,6 @@ public class Credit implements IValue<Currency> {
 
     @Override
     public String toString() {
-        return "Credit{" +
-                "credit=" + credit +
-                '}';
+        return "Credit{" + "credit=" + credit + '}';
     }
 }

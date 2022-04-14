@@ -14,11 +14,8 @@ public class Currency implements IValue<Double> {
         return this.currency;
     }
 
-
     @Override
     public String toString() {
-        return "Currency{" +
-                "currency=" + currency +
-                '}';
+        return "Currency{" + "currency=" + currency + '}';
     }
 }

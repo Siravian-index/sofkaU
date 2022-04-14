@@ -16,9 +16,7 @@ public class Debit implements IValue<Currency> {
 
     @Override
     public String toString() {
-        return "Debit{" +
-                "debit=" + debit +
-                '}';
+        return "Debit{" + "debit=" + debit + '}';
     }
 
 
