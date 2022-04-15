@@ -11,7 +11,7 @@ public class Transaction {
     private final MovementType type;
 
 //    take balance as currency
-    public Transaction(Credit credit, Debit debit, Balance balance) {
+    public Transaction(Credit credit, Debit debit, Currency balance) {
         this.date = new FormattedDate();
         this.credit = credit;
         this.debit = debit;
@@ -19,7 +19,7 @@ public class Transaction {
         this.type = MovementType.MIXED;
     }
 
-    public Transaction( Debit debit, Balance balance) {
+    public Transaction( Debit debit, Currency balance) {
         this.credit = new Credit(new Currency(0.0));
         this.date = new FormattedDate();
         this.debit = debit;
@@ -27,7 +27,7 @@ public class Transaction {
         this.type = MovementType.WITHDRAW;
     }
 
-    public Transaction(Credit credit, Balance balance) {
+    public Transaction(Credit credit, Currency balance) {
         this.date = new FormattedDate();
         this.debit = new Debit(new Currency(0.0));
         this.credit = credit;

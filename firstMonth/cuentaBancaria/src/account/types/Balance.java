@@ -5,17 +5,23 @@ import account.types.interfaces.IBalance;
 import account.validator.AccountValidator;
 
 final public class Balance implements IBalance {
-    private final Currency balance;
+    private Currency balance;
 
     public Balance(Currency currency) {
         new AccountValidator().validateDeposit(currency);
         this.balance = currency;
     }
 
-    public Balance() {
-        this.balance = new Currency(0.0);
+    @Override
+    public Transaction withDraw(Currency amount) {
     }
 
+    @Override
+    public Transaction deposit(Credit amount) {
+        this.balance = new Currency(currentBalance() + amount.value());
+        Transaction transaction = new Transaction(amount, this.balance);
+        return transaction;
+    }
 
     @Override
     public Double currentBalance() {

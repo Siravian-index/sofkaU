@@ -9,9 +9,9 @@ public interface IBalance {
 
     Transaction deposit(Currency amount);
 
-    Transaction saveTransaction();
+//    Transaction saveTransaction();
 
     Double currentBalance();
 
-    Transaction transfer(Id accountId, Currency amount);
+//    Transaction transfer(Id accountId, Currency amount);
 }
