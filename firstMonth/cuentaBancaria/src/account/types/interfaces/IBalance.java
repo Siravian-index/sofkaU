@@ -15,6 +15,6 @@ public interface IBalance {
 
     Double currentBalance();
 
-//    void balanceHistory();
+    void balanceHistory();
 
 }

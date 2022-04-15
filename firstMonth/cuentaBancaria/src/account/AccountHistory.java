@@ -18,6 +18,7 @@ public class AccountHistory implements IAccountHistory {
 
     public void printHistory() {
         this.transactionHistory
+//                .stream().map(transaction -> transaction.date.showDate())
                 .forEach(System.out::println);
     }
 

@@ -9,6 +9,9 @@ public class Main {
         myAccount.deposit(500.0);
         myAccount.withdraw(200.0);
 
+        myAccount.printStatements();
+
+
 
     }
 }

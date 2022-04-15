@@ -56,6 +56,11 @@ final public class Balance implements IBalance {
     }
 
     @Override
+    public void balanceHistory() {
+        this.accountHistory.printHistory();
+    }
+
+    @Override
     public String toString() {
         return "Balance{" + "balance=" + balance + '}';
     }
