@@ -1,15 +1,17 @@
 package account.types.interfaces;
 
+import account.Transaction;
 import account.types.Currency;
+import account.types.Id;
 
 public interface IBalance {
-    void withDraw(Currency amount);
+    Transaction withDraw(Currency amount);
 
-    void deposit(Currency amount);
+    Transaction deposit(Currency amount);
 
-    void saveTransaction();
+    Transaction saveTransaction();
 
-    Currency seeBalance();
+    Double currentBalance();
 
-    void transfer(Currency amount);
+    Transaction transfer(Id accountId, Currency amount);
 }

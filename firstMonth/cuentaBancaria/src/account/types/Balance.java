@@ -1,9 +1,10 @@
 package account.types;
 
+import account.Transaction;
 import account.types.interfaces.IBalance;
 import account.validator.AccountValidator;
 
-public class Balance implements IBalance {
+final public class Balance implements IBalance {
     private final Currency balance;
 
     public Balance(Currency currency) {
@@ -15,35 +16,10 @@ public class Balance implements IBalance {
         this.balance = new Currency(0.0);
     }
 
-    @Override
-    public Currency value() {
-        return this.balance;
-    }
-
 
     @Override
-    public void withDraw(Currency amount) {
-
-    }
-
-    @Override
-    public void deposit(Currency amount) {
-
-    }
-
-    @Override
-    public void saveTransaction() {
-
-    }
-
-    @Override
-    public void transfer(Currency amount) {
-
-    }
-
-    @Override
-    public Currency seeBalance() {
-        return this.balance;
+    public Double currentBalance() {
+        return this.balance.value();
     }
 
     @Override

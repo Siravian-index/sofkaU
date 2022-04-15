@@ -14,7 +14,7 @@ public class AccountValidator implements IAccountValidator {
 
     @Override
     public void validateWithdraw(Currency currency, Balance balance) throws IllegalStateException {
-        if (currency.value() > balance.seeBalance().value()) {
+        if (currency.value() > balance.currentBalance()) {
             throw new IllegalStateException("The amount of money that you want to withdraw is greater than the total of your account");
         }
     }

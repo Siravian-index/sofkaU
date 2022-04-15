@@ -2,7 +2,7 @@ package account.types;
 
 import account.types.interfaces.IValue;
 
-public class Debit implements IValue<Currency> {
+public class Debit implements IValue {
     private final Currency debit;
 
     public Debit(Currency debit) {
@@ -10,8 +10,8 @@ public class Debit implements IValue<Currency> {
     }
 
     @Override
-    public Currency value() {
-        return this.debit;
+    public Double value() {
+        return this.debit.value();
     }
 
     @Override

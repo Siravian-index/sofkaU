@@ -2,7 +2,7 @@ package account.types;
 
 import account.types.interfaces.IValue;
 
-public class Credit implements IValue<Currency> {
+public class Credit implements IValue {
     private final Currency credit;
 
     public Credit(Currency credit) {
@@ -10,8 +10,8 @@ public class Credit implements IValue<Currency> {
     }
 
     @Override
-    public Currency value() {
-        return this.credit;
+    public Double value() {
+        return this.credit.value();
     }
 
     @Override

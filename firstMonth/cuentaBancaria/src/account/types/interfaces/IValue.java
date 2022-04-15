@@ -1,7 +1,7 @@
 package account.types.interfaces;
 
-public interface IValue<T> {
+public interface IValue {
 
-    T value();
+    Double value();
     String toString();
 }
