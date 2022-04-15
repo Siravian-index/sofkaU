@@ -17,40 +17,38 @@ final public class Balance implements IBalance {
 
     @Override
     public Transaction withDraw(Debit debit) {
-        try {
-            new AccountValidator().validateWithdraw(debit, this.balance);
-            this.balance = this.balance.minusCurrency(debit);
-            Transaction transaction = new Transaction(debit, this.balance);
-            saveTransaction(transaction);
-            return transaction;
-
-        } catch (IllegalStateException e) {
-            throw new RuntimeException(e);
-        }
-
+        decreaseBalance(debit);
+        return saveTransaction(debit, this.balance);
     }
 
 
     @Override
     public Transaction deposit(Credit credit) {
-        this.balance = this.balance.plusCurrency(credit);
-        Transaction transaction = new Transaction(credit, this.balance);
-        saveTransaction(transaction);
-        return transaction;
+        increaseBalance(credit);
+        return saveTransaction(credit, this.balance);
     }
 
 
-    @Override
-    public void saveTransaction(Transaction transaction) {
-        this.accountHistory.push(transaction);
-    }
-
-    private void decreseBalance(Debit debit) {
-
+    public void decreaseBalance(Debit debit) throws IllegalStateException {
+        try {
+            new AccountValidator().validateWithdraw(debit, this.balance);
+            this.balance = this.balance.minusCurrency(debit);
+        } catch (IllegalStateException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void increaseBalance(Credit credit) {
+        this.balance = this.balance.plusCurrency(credit);
+    }
 
+    @Override
+    public Transaction saveTransaction(Debit debit, Currency balance) {
+        return this.accountHistory.save(new Transaction(debit, balance));
+    }
+
+    public Transaction saveTransaction(Credit credit, Currency balance) {
+        return this.accountHistory.save(new Transaction(credit, balance));
     }
 
     @Override
