@@ -54,6 +54,10 @@ public class Account implements IAccount {
         return this.accountDetails.accountOwner.getOwner();
     }
 
+    public String checkId() {
+        return this.accountDetails.accountId.getId();
+    }
+
     @Override
     public Double checkBalance() {
         return this.accountDetails.accountBalance.currentBalance();
