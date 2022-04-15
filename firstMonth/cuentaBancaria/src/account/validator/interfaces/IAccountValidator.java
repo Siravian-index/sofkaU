@@ -1,12 +1,12 @@
 package account.validator.interfaces;
 
-import account.types.Balance;
 import account.types.Currency;
+import account.types.Debit;
 
 public interface IAccountValidator {
 
     void validateDeposit(Currency currency) throws IllegalStateException;
-    void validateWithdraw(Currency currency, Balance balance) throws  IllegalStateException;
+    void validateWithdraw(Debit currency, Currency balance) throws  IllegalStateException;
 //    validate name
 //    validate id?
 

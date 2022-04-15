@@ -27,7 +27,17 @@ public class Currency implements IValue, ICurrency {
     }
 
     @Override
+    public Currency plusCurrency(Credit credit) {
+        return new Currency(this.value() + credit.value());
+    }
+
+    @Override
     public Currency minusCurrency(Currency currency) {
         return new Currency(this.value() - currency.value());
+    }
+
+    @Override
+    public Currency minusCurrency(Debit debit) {
+        return new Currency(this.value() - debit.value());
     }
 }
