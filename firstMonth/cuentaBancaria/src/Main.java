@@ -1,6 +1,9 @@
 import account.Account;
 import account.AccountDetails;
+import account.Transaction;
 import account.types.*;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,8 +12,11 @@ public class Main {
         myAccount.deposit(500.0);
         myAccount.withdraw(200.0);
 
-        myAccount.printStatements();
-
+        myAccount.checkStatus();
+        myAccount.deposit(1000.0);
+        myAccount.checkStatus();
+        List<Transaction> list = myAccount.findTransactionsBy(MovementType.DEPOSIT);
+        System.out.println(list.size());
 
 
     }

@@ -41,6 +41,14 @@ public class Transaction {
 
     }
 
+    public MovementType getType() {
+        return type;
+    }
+
+    public FormattedDate getDate() {
+        return date;
+    }
+
     @Override
     public String toString() {
         return "Transaction{" +

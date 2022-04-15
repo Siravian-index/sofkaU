@@ -5,6 +5,8 @@ import account.Transaction;
 import account.types.interfaces.IBalance;
 import account.validator.AccountValidator;
 
+import java.util.List;
+
 final public class Balance implements IBalance {
     private Currency balance;
     private final AccountHistory accountHistory;
@@ -26,6 +28,16 @@ final public class Balance implements IBalance {
     public Transaction deposit(Credit credit) {
         increaseBalance(credit);
         return saveTransaction(credit, this.balance);
+    }
+
+    @Override
+    public List<Transaction> findTransactionsBy(String date) {
+        return this.accountHistory.findBy(date);
+    }
+
+    @Override
+    public List<Transaction> findTransactionsBy(MovementType type) {
+        return this.accountHistory.findBy(type);
     }
 
 

@@ -4,7 +4,7 @@ import account.Transaction;
 import account.types.Id;
 import account.types.MovementType;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface IAccount {
     void deposit(Double amount);
@@ -17,9 +17,9 @@ public interface IAccount {
 
     void checkStatus();
 
-    ArrayList<Transaction> findTransactionsBy(MovementType type);
+    List<Transaction> findTransactionsBy(MovementType type);
 
-    ArrayList<Transaction> findTransactionsBy(String date);
+    List<Transaction> findTransactionsBy(String date);
 
     String checkOwner();
 

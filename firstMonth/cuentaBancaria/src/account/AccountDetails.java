@@ -19,7 +19,7 @@ public class AccountDetails {
     }
 
     public String accountStatus() {
-        return "Account id is: " + this.accountId + " the owner is " + this.accountOwner.getOwner() +
-                " the current balance is " + accountBalance.currentBalance();
+        return "Account id is: " + this.accountId.getId() + ", the owner is " + this.accountOwner.getOwner() +
+                ", and the current balance is " + accountBalance.currentBalance();
     }
 }

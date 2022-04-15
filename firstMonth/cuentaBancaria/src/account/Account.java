@@ -3,7 +3,7 @@ package account;
 import account.interfaces.IAccount;
 import account.types.*;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Account implements IAccount {
     private final AccountDetails accountDetails;
@@ -36,17 +36,17 @@ public class Account implements IAccount {
 
     @Override
     public void checkStatus() {
-        this.accountDetails.accountStatus();
+        System.out.println(this.accountDetails.accountStatus());
     }
 
     @Override
-    public ArrayList<Transaction> findTransactionsBy(MovementType type) {
-        return null;
+    public List<Transaction> findTransactionsBy(MovementType type) {
+        return this.accountDetails.accountBalance.findTransactionsBy(type);
     }
 
     @Override
-    public ArrayList<Transaction> findTransactionsBy(String date) {
-        return null;
+    public List<Transaction> findTransactionsBy(String date) {
+        return this.accountDetails.accountBalance.findTransactionsBy(date);
     }
 
     @Override
