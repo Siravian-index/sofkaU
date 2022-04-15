@@ -8,7 +8,7 @@ public interface IBalance {
     Transaction withDraw(Debit amount);
 
 
-//    void saveTransaction();
+    void saveTransaction(Transaction transaction);
 
     Transaction deposit(Credit amount);
 
