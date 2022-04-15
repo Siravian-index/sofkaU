@@ -1,7 +1,6 @@
 package account;
 
 import account.interfaces.IAccountHistory;
-import account.validator.interfaces.IAccountValidator;
 
 import java.util.ArrayList;
 

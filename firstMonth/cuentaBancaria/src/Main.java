@@ -1,15 +1,14 @@
-import account.types.Balance;
-import account.types.Credit;
-import account.types.Currency;
-import account.types.Debit;
+import account.Account;
+import account.AccountDetails;
+import account.types.*;
 
 public class Main {
     public static void main(String[] args) {
-        Balance balance = new Balance(new Currency(100.0));
-        System.out.println(balance.deposit(new Credit(new Currency(500.0))));
-        System.out.println(balance.currentBalance());
-        System.out.println(balance.withDraw(new Debit(new Currency(100.0))));
-        System.out.println(balance.currentBalance());
+        AccountDetails accountDetails = new AccountDetails(new Id(), new Owner("David"), new Balance(new Currency(300.00)));
+        Account myAccount = new Account(accountDetails);
+        myAccount.deposit(500.0);
+        myAccount.withdraw(200.0);
+
 
     }
 }

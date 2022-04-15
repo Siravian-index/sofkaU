@@ -1,16 +1,27 @@
 package account;
 
+import account.types.Credit;
+import account.types.Currency;
+import account.types.Debit;
+
 public class Account {
-    private AccountDetails accountDetails;
-    private AccountHistory accountHistory;
+    private final AccountDetails accountDetails;
+
+    public Account(AccountDetails accountDetails) {
+        this.accountDetails = accountDetails;
+    }
 
 
-    public void deposit(int amount, String date) {
-//        "guardar" esta transaccion
+    public void deposit(Double amount) {
+        Credit depositAmount = new Credit(new Currency(amount));
+        this.accountDetails.accountBalance.deposit(depositAmount);
     }
-    public void withdraw(int amount, String date){
-//        "guardar" esta transaccion
+
+    public void withdraw(Double amount) {
+        Debit withDrawAmount = new Debit(new Currency(amount));
+        this.accountDetails.accountBalance.withDraw(withDrawAmount);
     }
+
     public void printStatements() {
 
     }

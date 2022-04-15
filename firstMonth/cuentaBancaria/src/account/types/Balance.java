@@ -29,7 +29,7 @@ final public class Balance implements IBalance {
     }
 
 
-    public void decreaseBalance(Debit debit) throws IllegalStateException {
+    private void decreaseBalance(Debit debit) throws IllegalStateException {
         try {
             new AccountValidator().validateWithdraw(debit, this.balance);
             this.balance = this.balance.minusCurrency(debit);
@@ -42,12 +42,11 @@ final public class Balance implements IBalance {
         this.balance = this.balance.plusCurrency(credit);
     }
 
-    @Override
-    public Transaction saveTransaction(Debit debit, Currency balance) {
+    private Transaction saveTransaction(Debit debit, Currency balance) {
         return this.accountHistory.save(new Transaction(debit, balance));
     }
 
-    public Transaction saveTransaction(Credit credit, Currency balance) {
+    private Transaction saveTransaction(Credit credit, Currency balance) {
         return this.accountHistory.save(new Transaction(credit, balance));
     }
 
