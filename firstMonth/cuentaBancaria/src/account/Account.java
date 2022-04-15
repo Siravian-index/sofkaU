@@ -35,6 +35,11 @@ public class Account implements IAccount {
     }
 
     @Override
+    public void checkStatus() {
+        this.accountDetails.accountStatus();
+    }
+
+    @Override
     public ArrayList<Transaction> findTransactionsBy(MovementType type) {
         return null;
     }

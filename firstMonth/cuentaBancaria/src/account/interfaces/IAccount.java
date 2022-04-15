@@ -15,6 +15,8 @@ public interface IAccount {
 
     void printStatements();
 
+    void checkStatus();
+
     ArrayList<Transaction> findTransactionsBy(MovementType type);
 
     ArrayList<Transaction> findTransactionsBy(String date);

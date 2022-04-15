@@ -17,4 +17,9 @@ public class AccountDetails {
         this.accountOwner = accountOwner;
         this.accountBalance = accountBalance;
     }
+
+    public String accountStatus() {
+        return "Account id is: " + this.accountId + " the owner is " + this.accountOwner.getOwner() +
+                " the current balance is " + accountBalance.currentBalance();
+    }
 }

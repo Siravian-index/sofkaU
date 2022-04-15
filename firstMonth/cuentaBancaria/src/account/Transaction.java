@@ -3,7 +3,6 @@ package account;
 import account.types.*;
 
 public class Transaction {
-//    This class will be instantiated each time we make a new Transaction
     private final FormattedDate date;
     private final Credit credit;
     private final Debit debit;

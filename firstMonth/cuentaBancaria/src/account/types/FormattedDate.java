@@ -6,36 +6,27 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class FormattedDate implements IDate {
-    final LocalDateTime date;
+    private final String date;
 
     public FormattedDate() {
-        this.date = LocalDateTime.now();
+        this.date = generateDate();
+    }
+
+    private String generateDate() {
+        return formatDate(LocalDateTime.now());
+    }
+
+    private String formatDate(LocalDateTime date) {
+        return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy-HH:mm"));
     }
 
     @Override
-    public String showFullDate() {
-        return formatDate(this.date, "dd/MM/yyyy-HH:mm:ss");
+    public String toString() {
+        return "FormattedDate{" + "date='" + date + '\'' + '}';
     }
 
     @Override
     public String showDate() {
-        return formatDate(this.date, "dd/MM/yyyy");
-    }
-
-    @Override
-    public String showHour() {
-        return formatDate(this.date, "HH:mm:ss");
-    }
-
-    private String formatDate(LocalDateTime date, String pattern) {
-        return date.format(DateTimeFormatter.ofPattern(pattern));
-    }
-
-
-    @Override
-    public String toString() {
-        return "FormattedDate{" +
-                "date='" + date + '\'' +
-                '}';
+        return this.date;
     }
 }
