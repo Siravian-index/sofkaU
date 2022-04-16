@@ -25,8 +25,9 @@ public class Account implements IAccount {
     }
 
     @Override
-    public void transfer(Id accountId, Double amount) {
-
+    public void transfer(Account account, Double amount) {
+        this.accountDetails.accountBalance.withDraw(new Debit(new Currency(amount)));
+        account.deposit(amount);
     }
 
     @Override

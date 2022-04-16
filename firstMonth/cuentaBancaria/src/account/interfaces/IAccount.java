@@ -1,7 +1,7 @@
 package account.interfaces;
 
+import account.Account;
 import account.Transaction;
-import account.types.Id;
 import account.types.MovementType;
 
 import java.util.List;
@@ -11,7 +11,7 @@ public interface IAccount {
 
     void withdraw(Double amount);
 
-    void transfer(Id accountId, Double amount);
+    void transfer(Account account, Double amount);
 
     void printStatements();
 

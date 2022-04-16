@@ -11,15 +11,15 @@ public class Transaction {
 
     private final Id transactionId;
 
-//    take balance as currency
-    public Transaction(Credit credit, Debit debit, Currency balance) {
-        this.date = new FormattedDate();
-        this.credit = credit;
-        this.debit = debit;
-        this.balance = balance;
-        this.type = MovementType.MIXED;
-        this.transactionId = new Id();
-    }
+//        TODO(remove this)
+//    public Transaction(Credit credit, Debit debit, Currency balance) {
+//        this.date = new FormattedDate();
+//        this.credit = credit;
+//        this.debit = debit;
+//        this.balance = balance;
+//        this.type = MovementType.MIXED;
+//        this.transactionId = new Id();
+//    }
 
     public Transaction( Debit debit, Currency balance) {
         this.credit = new Credit(new Currency(0.0));
