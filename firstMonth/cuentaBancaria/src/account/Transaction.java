@@ -11,7 +11,7 @@ public class Transaction {
 
     private final Id transactionId;
 
-    public Transaction( Debit debit, Currency balance) {
+    public Transaction(Debit debit, Currency balance) {
         this.credit = new Credit(new Currency(0.0));
         this.date = new FormattedDate();
         this.debit = debit;
@@ -53,13 +53,6 @@ public class Transaction {
 
     @Override
     public String toString() {
-        return "Transaction{" +
-                "date='" + date + '\'' +
-                ", credit=" + credit +
-                ", debit=" + debit +
-                ", balance=" + balance +
-                ", type=" + type +
-                ", transactionId=" + transactionId +
-                '}';
+        return "Transaction{" + "date='" + date + '\'' + ", credit=" + credit + ", debit=" + debit + ", balance=" + balance + ", type=" + type + ", transactionId=" + transactionId + '}';
     }
 }

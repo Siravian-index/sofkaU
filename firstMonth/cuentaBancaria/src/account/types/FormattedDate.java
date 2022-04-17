@@ -17,7 +17,8 @@ public class FormattedDate implements IDate {
     }
 
     private String formatDate(LocalDateTime date) {
-        return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy-HH:mm"));
+//        return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy-HH:mm"));
+        return date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     @Override

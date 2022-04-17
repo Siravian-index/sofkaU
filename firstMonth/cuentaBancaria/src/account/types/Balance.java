@@ -23,7 +23,6 @@ final public class Balance implements IBalance {
         return saveTransaction(debit, this.balance);
     }
 
-
     @Override
     public Transaction deposit(Credit credit) {
         increaseBalance(credit);

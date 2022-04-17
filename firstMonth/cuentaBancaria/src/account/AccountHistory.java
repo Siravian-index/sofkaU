@@ -46,7 +46,7 @@ public class AccountHistory implements IAccountHistory {
         String credit = creditValue > 0 ? " Credit " + creditValue : "";
         Double debitValue = transaction.getDebit().value();
         String debit = debitValue > 0 ? " Debit " + debitValue : "";
-        String balance = " Balance: " +transaction.getBalance().value();
+        String balance = " Balance: " + transaction.getBalance().value();
         String type = " Type: " + transaction.getType().toString();
         String content = date + type + credit + debit + balance;
         System.out.println(content);

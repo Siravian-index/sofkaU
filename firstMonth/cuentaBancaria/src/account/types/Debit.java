@@ -19,5 +19,4 @@ public class Debit implements IValue {
         return "Debit{" + "debit=" + debit + '}';
     }
 
-
 }

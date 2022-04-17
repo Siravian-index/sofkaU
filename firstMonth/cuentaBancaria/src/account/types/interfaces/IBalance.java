@@ -13,6 +13,7 @@ public interface IBalance {
     Transaction deposit(Credit amount);
 
     List<Transaction> findTransactionsBy(String date);
+
     List<Transaction> findTransactionsBy(MovementType type);
 
 //    Transaction transfer(Id accountId, Currency amount);
