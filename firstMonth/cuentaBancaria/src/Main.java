@@ -7,18 +7,14 @@ import account.types.Owner;
 
 public class Main {
     public static void main(String[] args) {
-        AccountDetails daniel = new AccountDetails(new Id(), new Owner("Daniel"), new Balance(new Currency(200.0)));
-        AccountDetails david = new AccountDetails(new Id(), new Owner("david"), new Balance(new Currency(100.0)));
-        Account danielAccount = new Account(daniel);
-        Account davidAccount = new Account(david);
-        danielAccount.deposit(300.0);
-        danielAccount.transfer(davidAccount, 100.0);
-
-        davidAccount.transfer(danielAccount,200.0);
-
-        danielAccount.printStatements();
-        System.out.println("david account:");
-        davidAccount.printStatements();
-
+        Account myAccount = new Account(new AccountDetails(new Id(), new Owner("david"), new Balance(new Currency(0.0))));
+        Account luisAccount = new Account(new AccountDetails(new Id(), new Owner("Luis"), new Balance(new Currency(0.0))));
+        myAccount.deposit(1000.0);
+        myAccount.deposit(2000.0);
+        myAccount.withdraw(500.0);
+        myAccount.transfer(luisAccount, 500.0);
+        myAccount.printStatements();
+        System.out.println("luis' account");
+        luisAccount.printStatements();
     }
 }

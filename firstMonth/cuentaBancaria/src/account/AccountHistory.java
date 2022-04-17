@@ -41,18 +41,14 @@ public class AccountHistory implements IAccountHistory {
     }
 
     private void formatPrintHistory(Transaction transaction) {
-        String date = transaction.getDate().showDate();
+        String date = "Date: " + transaction.getDate().showDate();
         Double creditValue = transaction.getCredit().value();
         String credit = creditValue > 0 ? " Credit " + creditValue : "";
         Double debitValue = transaction.getDebit().value();
         String debit = debitValue > 0 ? " Debit " + debitValue : "";
-        Double balance = transaction.getBalance().value();
-        String type = transaction.getType().toString();
-        String content = "Date: " + date +
-                " Type: " + type +
-                credit +
-                debit +
-                " Balance: " + balance;
+        String balance = " Balance: " +transaction.getBalance().value();
+        String type = " Type: " + transaction.getType().toString();
+        String content = date + type + credit + debit + balance;
         System.out.println(content);
     }
 
