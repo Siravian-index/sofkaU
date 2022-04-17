@@ -37,7 +37,23 @@ public class AccountHistory implements IAccountHistory {
 
     public void printHistory() {
         this.transactionHistory
-                .forEach(System.out::println);
+                .forEach(this::formatPrintHistory);
+    }
+
+    private void formatPrintHistory(Transaction transaction) {
+        String date = transaction.getDate().showDate();
+        Double creditValue = transaction.getCredit().value();
+        String credit = creditValue > 0 ? " Credit " + creditValue : "";
+        Double debitValue = transaction.getDebit().value();
+        String debit = debitValue > 0 ? " Debit " + debitValue : "";
+        Double balance = transaction.getBalance().value();
+        String type = transaction.getType().toString();
+        String content = "Date: " + date +
+                " Type: " + type +
+                credit +
+                debit +
+                " Balance: " + balance;
+        System.out.println(content);
     }
 
 }

@@ -11,16 +11,6 @@ public class Transaction {
 
     private final Id transactionId;
 
-//        TODO(remove this)
-//    public Transaction(Credit credit, Debit debit, Currency balance) {
-//        this.date = new FormattedDate();
-//        this.credit = credit;
-//        this.debit = debit;
-//        this.balance = balance;
-//        this.type = MovementType.MIXED;
-//        this.transactionId = new Id();
-//    }
-
     public Transaction( Debit debit, Currency balance) {
         this.credit = new Credit(new Currency(0.0));
         this.date = new FormattedDate();
@@ -47,6 +37,18 @@ public class Transaction {
 
     public FormattedDate getDate() {
         return date;
+    }
+
+    public Credit getCredit() {
+        return credit;
+    }
+
+    public Debit getDebit() {
+        return debit;
+    }
+
+    public Currency getBalance() {
+        return balance;
     }
 
     @Override

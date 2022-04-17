@@ -20,8 +20,7 @@ public class Account implements IAccount {
 
     @Override
     public void withdraw(Double amount) {
-        Debit withDrawAmount = new Debit(new Currency(amount));
-        this.accountDetails.accountBalance.withDraw(withDrawAmount);
+        this.accountDetails.accountBalance.withDraw(new Debit(new Currency(amount)));
     }
 
     @Override
