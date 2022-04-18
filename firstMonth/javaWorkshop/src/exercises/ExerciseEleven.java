@@ -10,7 +10,7 @@ adicionalmente cuantas vocales tiene de “a,e,i,o,u”.*/
 public class ExerciseEleven {
     public static void main(String[] args) {
         String phrase = getPhrase();
-        System.out.println("phrase length is: " + phraseLength(phrase));
+        System.out.println("\nphrase length is: " + phraseLength(phrase));
         System.out.println("aeiou amount: " + result(phrase));
     }
 
