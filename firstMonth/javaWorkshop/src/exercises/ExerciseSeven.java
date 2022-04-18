@@ -7,6 +7,7 @@ import static exercises.ExerciseOne.getNumber;
  * si no lo es lo volverá a pedir (do while), después muestra ese número por consola.*/
 public class ExerciseSeven {
     public static void main(String[] args) {
+        System.out.println("Type a positive number");
         askNumber();
     }
 
@@ -16,7 +17,7 @@ public class ExerciseSeven {
             do {
                  number = getNumber();
             } while (number < 0);
-            System.out.println(number);
+            System.out.println("Your number was: " + number);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
