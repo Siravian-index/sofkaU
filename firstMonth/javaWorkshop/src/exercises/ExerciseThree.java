@@ -1,7 +1,5 @@
-package exercises.one;
+package exercises;
 
-
-import static exercises.one.ExerciseOne.getNumber;
 
 /*
 * Haz una aplicación que calcule el área de un círculo(pi*R2).
@@ -10,7 +8,7 @@ import static exercises.one.ExerciseOne.getNumber;
 public class ExerciseThree {
     public static void main(String[] args) {
         try{
-            double radius = getNumber();
+            double radius = ExerciseOne.getNumber();
             System.out.println("Area is: " + calculateCircleArea(radius));
         } catch (Exception e) {
             System.out.println(e.getMessage());
