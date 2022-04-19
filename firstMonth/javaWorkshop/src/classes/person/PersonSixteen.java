@@ -34,20 +34,20 @@ public class PersonSixteen implements IPerson {
 
 
     @Override
-    public int calculateBMI() {
+    public String calculateBMI() {
         final double BMI = this.getWeight() / (Math.pow(this.getHeight(), 2));
         System.out.println("BMI is: " + BMI);
         final boolean isUnderWeight = BMI < 20;
         final boolean isHealthyWeight = BMI >= 20 && BMI <= 25;
         final boolean isOverWeight = BMI > 25;
         if (isUnderWeight) {
-            return -1;
+            return "Your BMI score is: " + BMI + ". Your are underweight";
         } else if (isHealthyWeight) {
-            return 0;
+            return "Your BMI score is: " + BMI + ". Your are healthy";
         } else if (isOverWeight) {
-            return 1;
+            return "Your BMI score is: " + BMI + ". Your are overweight";
         } else {
-            throw new IllegalStateException("Value does not fit into the design");
+           return "Please fill your data correctly";
         }
 
     }
