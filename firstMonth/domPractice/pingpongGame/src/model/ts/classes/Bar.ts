@@ -19,9 +19,17 @@ class Bar {
     this.speed = 10
   }
 
-  down() {}
+  down() {
+    this.y += this.speed
+  }
 
-  up() {}
+  up() {
+    this.y -= this.speed
+  }
+
+  toString(): string {
+    return this.toString()
+  }
 }
 
 export default Bar

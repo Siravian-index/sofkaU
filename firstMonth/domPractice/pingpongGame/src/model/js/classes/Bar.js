@@ -9,7 +9,14 @@ class Bar {
         this.kind = 'rectangle';
         this.speed = 10;
     }
-    down() { }
-    up() { }
+    down() {
+        this.y += this.speed;
+    }
+    up() {
+        this.y -= this.speed;
+    }
+    toString() {
+        return this.toString();
+    }
 }
 export default Bar;

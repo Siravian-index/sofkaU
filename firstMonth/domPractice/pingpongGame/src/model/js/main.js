@@ -9,5 +9,16 @@ function main() {
     const boardView = new BoardView(canvas, board);
     console.log(boardView);
     boardView.drawElement();
+    document.addEventListener('keydown', function (event) {
+        const pressedKey = event.key;
+        console.log(pressedKey);
+        if (pressedKey === 'w') {
+            bar.up();
+            console.log(bar);
+        }
+        else if (pressedKey === 's') {
+            bar.down();
+        }
+    });
 }
 main();
