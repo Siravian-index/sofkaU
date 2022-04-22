@@ -13,7 +13,7 @@ class Board {
     this.height = height
     this.playing = false
     this.gameOver = false
-    this.bars = []
+    this.bars = [] as ballBars[]
     this.ball = new Ball()
   }
   get elements() {

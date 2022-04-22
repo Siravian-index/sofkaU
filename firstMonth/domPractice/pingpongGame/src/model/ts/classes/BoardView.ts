@@ -1,4 +1,5 @@
 import { ballBars } from './../types/ballBars'
+import Ball from './Ball'
 import Bar from './Bar.js'
 import Board from './Board.js'
 
@@ -14,7 +15,7 @@ class BoardView {
     this.context = canvas.getContext('2d')
   }
 
-  simpleDraw() {
+  drawElement() {
     const elements = this.board.elements
     for (const element of elements) {
       if (this.context) {
@@ -25,8 +26,9 @@ class BoardView {
 
   draw(context: CanvasRenderingContext2D, ballBars: ballBars) {
     const bar = ballBars as Bar
+    // const ball = ballBars as Ball
     switch (bar.kind) {
-      case 'square':
+      case 'rectangle':
         context.fillRect(bar.x, bar.y, bar.width, bar.height)
         break
 

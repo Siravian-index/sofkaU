@@ -7,6 +7,7 @@ class Bar {
   height: number
   board: Board
   kind: string
+  speed: number
   constructor(x: number, y: number, width: number, height: number, board: Board) {
     this.x = x
     this.y = y
@@ -15,6 +16,7 @@ class Bar {
     this.board = board
     this.board.bars.push(this)
     this.kind = 'rectangle'
+    this.speed = 10
   }
 
   down() {}

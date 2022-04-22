@@ -6,7 +6,7 @@ class BoardView {
         this.board = board;
         this.context = canvas.getContext('2d');
     }
-    simpleDraw() {
+    drawElement() {
         const elements = this.board.elements;
         for (const element of elements) {
             if (this.context) {
@@ -16,8 +16,9 @@ class BoardView {
     }
     draw(context, ballBars) {
         const bar = ballBars;
+        // const ball = ballBars as Ball
         switch (bar.kind) {
-            case 'square':
+            case 'rectangle':
                 context.fillRect(bar.x, bar.y, bar.width, bar.height);
                 break;
             default:
