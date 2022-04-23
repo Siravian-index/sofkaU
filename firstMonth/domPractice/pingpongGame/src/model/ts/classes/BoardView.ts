@@ -39,6 +39,11 @@ class BoardView {
     }
   }
 
+  play() {
+    this.clean()
+    this.drawElement()
+  }
+
   // draw(context: CanvasRenderingContext2D, ballBars: ballBars) {
   //   const bar = ballBars as Bar
   //   // const ball = ballBars as Ball

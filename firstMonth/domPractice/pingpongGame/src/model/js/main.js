@@ -32,8 +32,7 @@ document.addEventListener('keydown', function (event) {
     }
 });
 function main() {
-    boardView.clean();
-    boardView.drawElement();
+    boardView.play();
     window.requestAnimationFrame(main);
 }
 window.requestAnimationFrame(main);

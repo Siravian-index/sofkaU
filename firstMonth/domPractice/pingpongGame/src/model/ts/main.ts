@@ -36,8 +36,7 @@ document.addEventListener('keydown', function (event: KeyboardEvent) {
 })
 
 function main() {
-  boardView.clean()
-  boardView.drawElement()
+  boardView.play()
   window.requestAnimationFrame(main)
 }
 

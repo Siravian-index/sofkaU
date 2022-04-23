@@ -8,14 +8,14 @@ class Board {
   playing: boolean
   gameOver: boolean
   bars: Bar[]
-  ball: Ball
+  ball: Ball | null
   constructor(width: number, height: number) {
     this.width = width
     this.height = height
     this.playing = false
     this.gameOver = false
     this.bars = [] as Bar[]
-    this.ball = new Ball()
+    this.ball = null
   }
   get elements() {
     const elements = this.bars

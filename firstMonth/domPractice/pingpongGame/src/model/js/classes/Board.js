@@ -1,4 +1,3 @@
-import Ball from './Ball.js';
 class Board {
     constructor(width, height) {
         this.width = width;
@@ -6,7 +5,7 @@ class Board {
         this.playing = false;
         this.gameOver = false;
         this.bars = [];
-        this.ball = new Ball();
+        this.ball = null;
     }
     get elements() {
         const elements = this.bars;

@@ -29,5 +29,9 @@ class BoardView {
                 break;
         }
     }
+    play() {
+        this.clean();
+        this.drawElement();
+    }
 }
 export default BoardView;
