@@ -33,7 +33,7 @@ function main() {
                 break;
         }
     });
-    window.requestAnimationFrame(main);
+    // window.requestAnimationFrame(main)
 }
 window.requestAnimationFrame(main);
 // window.addEventListener('load', main)

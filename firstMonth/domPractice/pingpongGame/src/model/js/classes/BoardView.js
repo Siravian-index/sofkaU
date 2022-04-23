@@ -8,17 +8,30 @@ class BoardView {
     }
     drawElement() {
         const elements = this.board.elements;
-        for (const element of elements) {
+        for (let i = elements.length - 1; i >= 0; i--) {
             if (this.context) {
+                const element = elements[i];
                 this.draw(this.context, element);
             }
         }
     }
-    draw(context, ballBars) {
-        const bar = ballBars;
+    // draw(context: CanvasRenderingContext2D, ballBars: ballBars) {
+    //   const bar = ballBars as Bar
+    //   // const ball = ballBars as Ball
+    //   switch (bar.kind) {
+    //     case 'rectangle':
+    //       console.log('inside switch rectangle')
+    //       context.fillRect(bar.x, bar.y, bar.width, bar.height)
+    //       break
+    //     default:
+    //       break
+    //   }
+    // }
+    draw(context, bar) {
         // const ball = ballBars as Ball
         switch (bar.kind) {
             case 'rectangle':
+                console.log('inside switch rectangle');
                 context.fillRect(bar.x, bar.y, bar.width, bar.height);
                 break;
             default:
