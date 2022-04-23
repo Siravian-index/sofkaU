@@ -9,6 +9,7 @@ function main() {
     const boardView = new BoardView(canvas, board);
     boardView.drawElement();
     document.addEventListener('keydown', function (event) {
+        event.preventDefault();
         const pressedKey = event.key;
         const W = 'w';
         const S = 's';
@@ -32,5 +33,8 @@ function main() {
                 break;
         }
     });
+    window.requestAnimationFrame(main);
 }
 window.requestAnimationFrame(main);
+// window.addEventListener('load', main)
+// setInterval(main, 1000)

@@ -11,6 +11,7 @@ function main() {
   boardView.drawElement()
 
   document.addEventListener('keydown', function (event: KeyboardEvent) {
+    event.preventDefault()
     const pressedKey: string = event.key
     const W = 'w'
     const S = 's'
@@ -35,6 +36,11 @@ function main() {
         break
     }
   })
+
+  window.requestAnimationFrame(main)
 }
 
 window.requestAnimationFrame(main)
+
+// window.addEventListener('load', main)
+// setInterval(main, 1000)
