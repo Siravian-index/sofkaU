@@ -1,4 +1,4 @@
-import Board from './Board'
+import Bar from './Bar'
 
 class Ball {
   x: number
@@ -22,6 +22,8 @@ class Ball {
     this.x += this.speedX * this.direction
     this.y += this.speedY
   }
+
+  collision(bar: Bar) {}
 }
 
 export default Ball

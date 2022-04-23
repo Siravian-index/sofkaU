@@ -1,5 +1,3 @@
-import Board from './Board.js'
-
 class Bar {
   x: number
   y: number
@@ -16,11 +14,13 @@ class Bar {
     this.speed = 10
   }
 
-  down() {
+  down(event: KeyboardEvent) {
+    event.preventDefault()
     this.y += this.speed
   }
 
-  up() {
+  up(event: KeyboardEvent) {
+    event.preventDefault()
     this.y -= this.speed
   }
 

@@ -7,10 +7,12 @@ class Bar {
         this.kind = 'rectangle';
         this.speed = 10;
     }
-    down() {
+    down(event) {
+        event.preventDefault();
         this.y += this.speed;
     }
-    up() {
+    up(event) {
+        event.preventDefault();
         this.y -= this.speed;
     }
     toString() {

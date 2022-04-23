@@ -39,10 +39,20 @@ class BoardView {
                 break;
         }
     }
+    checkCollisions() {
+        const bars = this.board.getBars();
+        for (let i = bars.length - 1; i >= 0; i--) {
+            if (this.context) {
+                const bar = bars[i];
+            }
+        }
+    }
     play() {
-        this.clean();
-        this.drawElement();
-        this.board.ball.move();
+        if (this.board.isPlaying) {
+            this.clean();
+            this.drawElement();
+            this.board.ball.move();
+        }
     }
 }
 export default BoardView;

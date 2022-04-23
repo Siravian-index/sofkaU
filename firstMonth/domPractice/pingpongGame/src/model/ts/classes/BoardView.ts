@@ -50,24 +50,22 @@ class BoardView {
     }
   }
 
-  play() {
-    this.clean()
-    this.drawElement()
-    this.board.ball.move()
+  checkCollisions() {
+    const bars = this.board.getBars()
+    for (let i = bars.length - 1; i >= 0; i--) {
+      if (this.context) {
+        const bar = bars[i]
+      }
+    }
   }
 
-  // draw(context: CanvasRenderingContext2D, ballBars: ballBars) {
-  //   const bar = ballBars as Bar
-  //   // const ball = ballBars as Ball
-  //   switch (bar.kind) {
-  //     case 'rectangle':
-  //       console.log('inside switch rectangle')
-  //       context.fillRect(bar.x, bar.y, bar.width, bar.height)
-  //       break
-  //     default:
-  //       break
-  //   }
-  // }
+  play() {
+    if (this.board.isPlaying) {
+      this.clean()
+      this.drawElement()
+      this.board.ball.move()
+    }
+  }
 }
 
 export default BoardView

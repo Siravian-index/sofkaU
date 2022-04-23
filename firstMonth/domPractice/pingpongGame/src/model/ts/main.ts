@@ -3,6 +3,12 @@ import Bar from './classes/Bar.js'
 import Board from './classes/Board.js'
 import BoardView from './classes/BoardView.js'
 
+const W = 'w'
+const S = 's'
+const ArrowUp = 'ArrowUp'
+const ArrowDown = 'ArrowDown'
+const SpaceBar = ' '
+
 const canvas = document.querySelector('#canvas') as HTMLCanvasElement
 const bar = new Bar(20, 100, 40, 100)
 const bar2 = new Bar(730, 100, 40, 100)
@@ -11,28 +17,24 @@ const board = new Board(800, 400, [bar, bar2], ball)
 const boardView = new BoardView(canvas, board)
 
 document.addEventListener('keydown', function (event: KeyboardEvent) {
-  event.preventDefault()
   const pressedKey: string = event.key
-  const W = 'w'
-  const S = 's'
-  const ArrowUp = 'ArrowUp'
-  const ArrowDown = 'ArrowDown'
-
   switch (pressedKey) {
     case W:
-      bar.up()
+      bar.up(event)
       break
     case S:
-      bar.down()
+      bar.down(event)
       break
     case ArrowUp:
-      bar2.up()
+      bar2.up(event)
       break
     case ArrowDown:
-      bar2.down()
+      bar2.down(event)
+      break
+    case SpaceBar:
+      board.pause(event)
       break
     default:
-      console.log('use w/s to move bar1, up/down to move bar2')
       break
   }
 })
