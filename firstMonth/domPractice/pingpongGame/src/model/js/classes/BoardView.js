@@ -40,10 +40,31 @@ class BoardView {
         }
     }
     checkCollisions() {
+        // hit() checks collisions
+        const hit = (bar, ball) => {
+            let didHit = false;
+            if (ball.x + ball.width >= bar.x && ball.x < bar.x + bar.width) {
+                if (ball.y + ball.height >= bar.y && ball.y < bar.y + bar.height) {
+                    didHit = true;
+                }
+            }
+            if (ball.x <= bar.x && ball.x + ball.width >= bar.x + bar.width) {
+                if (ball.y <= bar.y && ball.y + ball.height >= bar.y + bar.height) {
+                    didHit = true;
+                }
+            }
+            if (bar.x <= ball.x && bar.x + bar.width >= ball.x + ball.width) {
+                if (bar.y <= ball.y && bar.y + bar.height >= ball.y + ball.height) {
+                    didHit = true;
+                }
+            }
+            return didHit;
+        };
         const bars = this.board.getBars();
         for (let i = bars.length - 1; i >= 0; i--) {
-            if (this.context) {
-                const bar = bars[i];
+            const bar = bars[i];
+            if (hit(bar, this.board.ball)) {
+                this.board.ball.collision(bar);
             }
         }
     }
@@ -51,6 +72,7 @@ class BoardView {
         if (this.board.isPlaying) {
             this.clean();
             this.drawElement();
+            this.checkCollisions();
             this.board.ball.move();
         }
     }

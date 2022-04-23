@@ -9,11 +9,14 @@ const ArrowUp = 'ArrowUp'
 const ArrowDown = 'ArrowDown'
 const SpaceBar = ' '
 
+const BOARD_WIDTH = 800
+const BOARD_HEIGHT = 400
+
 const canvas = document.querySelector('#canvas') as HTMLCanvasElement
 const bar = new Bar(20, 100, 40, 100)
 const bar2 = new Bar(730, 100, 40, 100)
-const ball = new Ball(350, 100, 10)
-const board = new Board(800, 400, [bar, bar2], ball)
+const ball = new Ball(350, 100, 10, BOARD_WIDTH)
+const board = new Board(BOARD_WIDTH, BOARD_HEIGHT, [bar, bar2], ball)
 const boardView = new BoardView(canvas, board)
 
 document.addEventListener('keydown', function (event: KeyboardEvent) {
