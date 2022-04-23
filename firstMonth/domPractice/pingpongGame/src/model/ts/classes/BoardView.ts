@@ -53,6 +53,7 @@ class BoardView {
   play() {
     this.clean()
     this.drawElement()
+    this.board.ball.move()
   }
 
   // draw(context: CanvasRenderingContext2D, ballBars: ballBars) {

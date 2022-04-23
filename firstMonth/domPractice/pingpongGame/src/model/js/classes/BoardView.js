@@ -42,6 +42,7 @@ class BoardView {
     play() {
         this.clean();
         this.drawElement();
+        this.board.ball.move();
     }
 }
 export default BoardView;
