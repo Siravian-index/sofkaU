@@ -28,7 +28,7 @@ class Bar {
   }
 
   toString(): string {
-    return this.toString()
+    return `x: ${this.x} y: ${this.y}`
   }
 }
 

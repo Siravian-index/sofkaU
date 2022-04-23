@@ -7,18 +7,16 @@ function main() {
     const bar = new Bar(20, 100, 40, 100, board);
     const bar2 = new Bar(730, 100, 40, 100, board);
     const boardView = new BoardView(canvas, board);
-    console.log(boardView);
     boardView.drawElement();
     document.addEventListener('keydown', function (event) {
         const pressedKey = event.key;
-        console.log(pressedKey);
         if (pressedKey === 'w') {
             bar.up();
-            console.log(bar);
         }
         else if (pressedKey === 's') {
             bar.down();
         }
+        console.log(bar.toString());
     });
 }
 main();

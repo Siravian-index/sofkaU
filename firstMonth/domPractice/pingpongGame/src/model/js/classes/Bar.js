@@ -16,7 +16,7 @@ class Bar {
         this.y -= this.speed;
     }
     toString() {
-        return this.toString();
+        return `x: ${this.x} y: ${this.y}`;
     }
 }
 export default Bar;

@@ -1,5 +1,4 @@
 import { ballBars } from './../types/ballBars'
-import Ball from './Ball'
 import Bar from './Bar.js'
 import Board from './Board.js'
 
