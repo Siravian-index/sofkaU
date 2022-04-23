@@ -10,13 +10,27 @@ function main() {
     boardView.drawElement();
     document.addEventListener('keydown', function (event) {
         const pressedKey = event.key;
-        if (pressedKey === 'w') {
-            bar.up();
+        const W = 'w';
+        const S = 's';
+        const ArrowUp = 'ArrowUp';
+        const ArrowDown = 'ArrowDown';
+        switch (pressedKey) {
+            case W:
+                bar.up();
+                break;
+            case S:
+                bar.down();
+                break;
+            case ArrowUp:
+                bar2.up();
+                break;
+            case ArrowDown:
+                bar2.down();
+                break;
+            default:
+                console.log('use w/s to move bar1, up/down to move bar2');
+                break;
         }
-        else if (pressedKey === 's') {
-            bar.down();
-        }
-        console.log(bar.toString());
     });
 }
-main();
+window.requestAnimationFrame(main);

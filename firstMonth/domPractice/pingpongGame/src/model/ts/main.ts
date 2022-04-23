@@ -12,14 +12,29 @@ function main() {
 
   document.addEventListener('keydown', function (event: KeyboardEvent) {
     const pressedKey: string = event.key
-    if (pressedKey === 'w') {
-      bar.up()
-    } else if (pressedKey === 's') {
-      bar.down()
-    }
+    const W = 'w'
+    const S = 's'
+    const ArrowUp = 'ArrowUp'
+    const ArrowDown = 'ArrowDown'
 
-    console.log(bar.toString())
+    switch (pressedKey) {
+      case W:
+        bar.up()
+        break
+      case S:
+        bar.down()
+        break
+      case ArrowUp:
+        bar2.up()
+        break
+      case ArrowDown:
+        bar2.down()
+        break
+      default:
+        console.log('use w/s to move bar1, up/down to move bar2')
+        break
+    }
   })
 }
 
-main()
+window.requestAnimationFrame(main)
