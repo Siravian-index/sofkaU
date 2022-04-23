@@ -14,6 +14,10 @@ class BoardView {
     this.context = canvas.getContext('2d')
   }
 
+  clean() {
+    this.context?.clearRect(0, 0, this.board.width, this.board.height)
+  }
+
   drawElement() {
     const elements = this.board.elements
     for (let i = elements.length - 1; i >= 0; i--) {
@@ -21,6 +25,17 @@ class BoardView {
         const element = elements[i]
         this.draw(this.context, element)
       }
+    }
+  }
+
+  draw(context: CanvasRenderingContext2D, bar: Bar) {
+    switch (bar.kind) {
+      case 'rectangle':
+        console.log('inside switch rectangle')
+        context.fillRect(bar.x, bar.y, bar.width, bar.height)
+        break
+      default:
+        break
     }
   }
 
@@ -36,18 +51,6 @@ class BoardView {
   //       break
   //   }
   // }
-
-  draw(context: CanvasRenderingContext2D, bar: Bar) {
-    // const ball = ballBars as Ball
-    switch (bar.kind) {
-      case 'rectangle':
-        console.log('inside switch rectangle')
-        context.fillRect(bar.x, bar.y, bar.width, bar.height)
-        break
-      default:
-        break
-    }
-  }
 }
 
 export default BoardView
