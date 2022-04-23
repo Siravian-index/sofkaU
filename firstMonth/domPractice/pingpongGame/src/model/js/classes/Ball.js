@@ -3,13 +3,13 @@ class Ball {
         this.x = x;
         this.y = y;
         this.radius = radius;
-        this.speed = 5;
+        this.speed = 3;
         this.speedX = 3;
         this.speedY = 0;
         this.kind = 'circle';
         this.direction = 1;
-        this.width = 0;
-        this.height = 0;
+        this.width = radius * 2;
+        this.height = radius * 2;
         this.bounceAngle = 0;
         this.maxBounceAngle = Math.PI / 12;
         this.boardWidth = boardWidth;
