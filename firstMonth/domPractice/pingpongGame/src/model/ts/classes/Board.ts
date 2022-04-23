@@ -8,19 +8,21 @@ class Board {
   playing: boolean
   gameOver: boolean
   bars: Bar[]
-  ball: Ball | null
-  constructor(width: number, height: number) {
+  ball: Ball
+  constructor(width: number, height: number, bars: Bar[], ball: Ball) {
     this.width = width
     this.height = height
     this.playing = false
     this.gameOver = false
-    this.bars = [] as Bar[]
-    this.ball = null
+    this.bars = bars
+    this.ball = ball
   }
-  get elements() {
-    const elements = this.bars
-    // elements.push(this.ball)
-    return elements
+
+  getBars(): Bar[] {
+    return this.bars
+  }
+  getBall(): Ball {
+    return this.ball
   }
 }
 

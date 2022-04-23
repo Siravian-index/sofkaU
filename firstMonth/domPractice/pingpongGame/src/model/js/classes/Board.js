@@ -1,16 +1,17 @@
 class Board {
-    constructor(width, height) {
+    constructor(width, height, bars, ball) {
         this.width = width;
         this.height = height;
         this.playing = false;
         this.gameOver = false;
-        this.bars = [];
-        this.ball = null;
+        this.bars = bars;
+        this.ball = ball;
     }
-    get elements() {
-        const elements = this.bars;
-        // elements.push(this.ball)
-        return elements;
+    getBars() {
+        return this.bars;
+    }
+    getBall() {
+        return this.ball;
     }
 }
 export default Board;

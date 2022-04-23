@@ -11,7 +11,9 @@ class BoardView {
         (_a = this.context) === null || _a === void 0 ? void 0 : _a.clearRect(0, 0, this.board.width, this.board.height);
     }
     drawElement() {
-        const elements = this.board.elements;
+        const bars = this.board.getBars();
+        const ball = this.board.getBall();
+        const elements = [...bars, ball];
         for (let i = elements.length - 1; i >= 0; i--) {
             if (this.context) {
                 const element = elements[i];
@@ -19,11 +21,19 @@ class BoardView {
             }
         }
     }
-    draw(context, bar) {
-        switch (bar.kind) {
+    draw(context, ballBars) {
+        // hard casting each element
+        const bar = ballBars;
+        const ball = ballBars;
+        switch (ballBars.kind) {
             case 'rectangle':
-                console.log('inside switch rectangle');
                 context.fillRect(bar.x, bar.y, bar.width, bar.height);
+                break;
+            case 'circle':
+                context.beginPath();
+                context.arc(ball.x, ball.y, ball.radius, 0, 7);
+                context.fill();
+                context.closePath();
                 break;
             default:
                 break;
