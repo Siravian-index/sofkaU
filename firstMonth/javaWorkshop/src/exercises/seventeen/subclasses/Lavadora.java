@@ -21,11 +21,20 @@ public class Lavadora extends Electrodomestico {
         super(precioBase, peso);
     }
 
+    @Override
     public void precioFinal() {
-//        int incrementByConsumoEnergetico = incrementByConsumoEnergetico(this.consumoEnergetico);
-//        int incrementByPeso = incrementByPeso(this.peso);
-//        this.precioBase += incrementByConsumoEnergetico + incrementByPeso;
-//        precioFinal();
+        super.precioFinal();
+        int incrementByLoad = incrementByCarga();
+        this.precioBase += incrementByLoad;
+    }
+
+    private int incrementByCarga() {
+        final int THIRTY_KG = 30;
+        final int priceIncrement = 50;
+        if(this.carga > THIRTY_KG) {
+            return priceIncrement;
+        }
+        return 0;
     }
 
 
