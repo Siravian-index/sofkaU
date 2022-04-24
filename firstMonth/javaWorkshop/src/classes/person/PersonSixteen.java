@@ -36,7 +36,7 @@ public class PersonSixteen implements IPerson {
     @Override
     public String calculateBMI() {
         final double BMI = this.getWeight() / (Math.pow(this.getHeight(), 2));
-        System.out.println("BMI is: " + BMI);
+        System.out.println("BMI is: " + (Double.isNaN(BMI) ? "missing data to calculate BMI" : BMI) );
         final boolean isUnderWeight = BMI < 20;
         final boolean isHealthyWeight = BMI >= 20 && BMI <= 25;
         final boolean isOverWeight = BMI > 25;
