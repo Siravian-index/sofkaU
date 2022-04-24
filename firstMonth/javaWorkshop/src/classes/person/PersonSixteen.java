@@ -16,27 +16,27 @@ public class PersonSixteen implements IPerson {
         this.name = name;
         this.age = age;
         setGender(genre);
-        this.DNI = generateDNI();
+        this.DNI = this.generateDNI();
     }
 
     public PersonSixteen(String name, int age, char genre, double weight, double height) {
         this.name = name;
         this.age = age;
-        this.DNI = generateDNI();
+        this.DNI = this.generateDNI();
         setGender(genre);
         this.weight = weight;
         this.height = height;
     }
 
     public PersonSixteen() {
-        this.DNI = generateDNI();
+        this.DNI = this.generateDNI();
     }
 
 
     @Override
     public String calculateBMI() {
         final double BMI = this.getWeight() / (Math.pow(this.getHeight(), 2));
-        System.out.println("BMI is: " + BMI);
+        System.out.println("BMI is: " + (Double.isNaN(BMI) ? "missing data to calculate BMI" : BMI) );
         final boolean isUnderWeight = BMI < 20;
         final boolean isHealthyWeight = BMI >= 20 && BMI <= 25;
         final boolean isOverWeight = BMI > 25;
@@ -59,8 +59,7 @@ public class PersonSixteen implements IPerson {
     }
 
 
-    @Override
-    public int generateDNI() {
+    private int generateDNI() {
         final int BASE = 100_000_000;
         return (int) (Math.random() * BASE);
     }
