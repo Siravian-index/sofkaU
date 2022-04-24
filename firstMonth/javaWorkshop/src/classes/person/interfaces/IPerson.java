@@ -6,5 +6,4 @@ public interface IPerson {
     String calculateBMI();
     boolean isAdult();
     String toString();
-    int generateDNI();
 }
