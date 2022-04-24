@@ -1,5 +1,5 @@
 package exercises.seventeen;
 
-public enum consumoEnergeticoEnum {
+public enum ConsumoEnergeticoEnum {
     A,B,C,D,E,F
 }
