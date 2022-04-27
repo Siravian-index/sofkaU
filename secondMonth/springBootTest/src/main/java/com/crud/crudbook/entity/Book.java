@@ -6,7 +6,7 @@ import org.springframework.lang.Nullable;
 import javax.persistence.*;
 
 @Entity(name = "Book")
-@Table(name = "book")
+@Table
 @Data
 public class Book {
 
