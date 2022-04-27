@@ -2,14 +2,14 @@ package com.crud.crudbook.service;
 
 import com.crud.crudbook.entity.Book;
 import com.crud.crudbook.repository.BookRepository;
-import lombok.RequiredArgsConstructor;
+import com.crud.crudbook.service.interfaces.BookServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class BookService implements BookServiceInterface{
+public class BookService implements BookServiceInterface {
 
     @Autowired
     private BookRepository bookRepository;

@@ -2,7 +2,6 @@ package com.crud.crudbook.controller;
 
 import com.crud.crudbook.entity.Book;
 import com.crud.crudbook.service.BookService;
-import com.crud.crudbook.service.BookServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

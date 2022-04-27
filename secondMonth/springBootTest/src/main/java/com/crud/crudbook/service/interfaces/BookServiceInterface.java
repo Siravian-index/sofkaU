@@ -1,4 +1,4 @@
-package com.crud.crudbook.service;
+package com.crud.crudbook.service.interfaces;
 
 import com.crud.crudbook.entity.Book;
 
