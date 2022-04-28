@@ -13,6 +13,7 @@ import java.util.Optional;
 @Service
 public class SmartPhoneService implements ISmartPhoneService {
 
+//    Q: Why are we "instantiating an interface here? How does this work?"
     @Autowired
     private SmartPhoneRepository smartPhoneRepository;
     @Override
