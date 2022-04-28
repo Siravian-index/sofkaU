@@ -5,6 +5,7 @@ import com.crud.crudbook.repository.SmartPhoneRepository;
 import com.crud.crudbook.service.interfaces.ISmartPhoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,6 +31,7 @@ public class SmartPhoneService implements ISmartPhoneService {
         if (phoneExistence) {
             return smartPhoneRepository.save(smartPhone);
         }
+        //        set status code to 404
         System.out.println("SmartPhone with id of " + smartPhone.getId() + " does not exist!");
         return null;
     }
@@ -41,6 +43,7 @@ public class SmartPhoneService implements ISmartPhoneService {
             smartPhoneRepository.deleteById(id);
             return true;
         }
+//        set status code to 404
         return false;
     }
 
