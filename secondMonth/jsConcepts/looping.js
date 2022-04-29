@@ -23,9 +23,9 @@ const city = { name: 'medellin', citizens: 50000, temp: 22, key: true }
 // const str1 = ""
 // const str2 = ''
 // const templateLiterals = ``
-// for (const key in city) {
-//   console.log(`key: ${key} and value: ${city[key]}`)
-// }
+for (const key in city) {
+  console.log(`key: ${key} and value: ${city[key]}`)
+}
 
 const names = ['david', 'juan', 'carlos']
 // forEach
