@@ -5,12 +5,13 @@ import com.sofkau.relationaldb.entity.Post;
 import com.sofkau.relationaldb.repository.CommentRepository;
 import com.sofkau.relationaldb.repository.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
 
-public class PostServiceImplementation implements IPostService{
+@Service
+public class PostServiceImplementation implements IPostService {
     @Autowired
     private PostRepository postRepository;
     @Autowired
@@ -23,19 +24,25 @@ public class PostServiceImplementation implements IPostService{
 
     @Override
     public Post createComment(Comment comment) {
-//        Post post = postRepository.findById(comment.getForeignKey()).get();
-//        post.addComment(comment);
-//        commentRepository.save(comment);
-//        return postRepository.save(post);
+//        try {
+//            Post post = postRepository.findById(comment.getForeignKey()).get();
+//            post.addComment(comment);
+//            commentRepository.save(comment);
+//            return postRepository.save(post);
+//        } catch (NullPointerException e) {
+//            System.out.println(e.getMessage());
+//        }
+//        return null;
 //        ----------------
         Optional<Post> post = postRepository.findById(comment.getForeignKey());
-        if(post.isPresent()) {
+        if (post.isPresent()) {
             Post realPost = post.get();
             realPost.addComment(comment);
             commentRepository.save(comment);
             return postRepository.save(realPost);
         }
         System.out.println("Cannot create comment for a non-existent post");
+//        set status code to 404
         return null;
     }
 
@@ -46,10 +53,10 @@ public class PostServiceImplementation implements IPostService{
 
     @Override
     public Post deletePost(Post post) {
-        final int zeroComments = 0;
+        final byte ZERO_COMMENTS = 0;
         Post postToDelete = postRepository.getById(post.getId());
         List<Comment> containedComments = postToDelete.getCommentList();
-        if(containedComments.size() > zeroComments) {
+        if (containedComments.size() > ZERO_COMMENTS) {
             for (Comment comment : containedComments) {
                 commentRepository.deleteById(comment.getId());
             }
