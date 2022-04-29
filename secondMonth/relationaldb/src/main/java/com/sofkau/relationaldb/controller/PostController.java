@@ -1,8 +1,7 @@
 package com.sofkau.relationaldb.controller;
 
-import com.sofkau.relationaldb.entity.Comment;
 import com.sofkau.relationaldb.entity.Post;
-import com.sofkau.relationaldb.service.IPostService;
+import com.sofkau.relationaldb.service.PostServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -13,33 +12,26 @@ import java.util.List;
 @RequestMapping("api/v1/posts")
 public class PostController {
 
-    //why an interface?
+    private final PostServiceImplementation postService;
+
     @Autowired
-    private IPostService service;
+    public PostController(PostServiceImplementation postService) {
+        this.postService = postService;
+    }
 
     @GetMapping
     public List<Post> getAllPosts() {
-        return service.findAllPosts();
+        return postService.findAllPosts();
     }
 
     @PostMapping
     public Post createPost(@RequestBody Post post) {
-        return service.createPost(post);
-    }
-
-    @PostMapping
-    public Post createComment(@RequestBody Comment comment) {
-        return service.createComment(comment);
+        return postService.createPost(post);
     }
 
     @DeleteMapping
     public Post deletePost(@RequestBody Post post) {
-        return service.deletePost(post);
-    }
-
-    @DeleteMapping
-    public void deleteComment(@RequestBody Comment comment) {
-        service.deleteComment(comment);
+        return postService.deletePost(post);
     }
 
 
