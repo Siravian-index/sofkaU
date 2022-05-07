@@ -1,0 +1,15 @@
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/service/ICategoryService.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/controller/CategoryController.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/dao/ICategoryDAO.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/repository/TodoRepository.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/repository/CategoryRepository.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/controller/TodoController.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/SofkauChallengeApplication.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/dao/ITodoDAO.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/service/TodoServiceImplementation.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/entity/Todo.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/dao/CategoryDAO.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/entity/Category.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/service/CategoryServiceImplementation.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/dao/TodoDAO.java
+/home/david/Documents/programming/sofka/activities/sofkau-challenge/src/main/java/com/zen/sofkauchallenge/service/ITodoService.java
